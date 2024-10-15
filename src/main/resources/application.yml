@@ -1,0 +1,13 @@
+spring:
+  application:
+  name: administrador
+  server:
+    port: 8080
+
+  jpa:
+    show-sql: true
+  datasource:
+    url: "jdbc:mysql://localhost:3306/administrador"
+    username: "root"
+    password: "123456"
+    driver_class_name : "com.mysql.cj.jdbc.Driver"
