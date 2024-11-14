@@ -7,6 +7,7 @@ import lombok.*;
 @Entity
 @Table(name = "personas")
 @Getter
+@Builder
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,29 +18,18 @@ public class Personas {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nombre")
+    @Column(name = "nombres")
     private String nombre;
 
-    @Column(name = "apellido")
+    @Column(name = "apellidos")
     private String apellido;
-
-    @Column(name = "documento")
-    private String documento;
-
-    @Column(name = "correo")
-    private String correo;
-
-    @Column(name = "celular")
-    private String celular;
-
-    @Column(name = "edad")
-    private int edad;
 
 
     @ManyToOne
     @JoinColumn(name = "fk_documentos", referencedColumnName = "id")
     private Documentos fk_documentos;
 
-    @Column(name = "fk_tarjetas")
-    private Long fk_tarjetas;
+    @ManyToOne
+    @JoinColumn(name = "fk_tarjetas", referencedColumnName = "id")
+    private Tarjetas fk_tarjetas;
 }

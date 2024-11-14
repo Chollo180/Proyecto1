@@ -5,20 +5,19 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "documentos")
+@Table(name = "ahorros")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Documentos {
+public class Ahorros {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private  Long id;
 
-    @Column(name = "tipo_documento")
-    private String tipo_documento;
+    @Column(name = "capital")
+    private Float capital;
 }

@@ -2,17 +2,16 @@ package com.administrador.entitys;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "tarjetas")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+
 
 public class Tarjetas {
     @Id
@@ -23,7 +22,10 @@ public class Tarjetas {
     @Column(name = "banco")
     private String banco;
 
-    @Column(name = "saldo")
-    private Long fk_saldo;
+    @ManyToOne
+    @JoinColumn(name = "fk_saldo", referencedColumnName = "id")
+    private Saldos fk_saldo;
+
+
 
 }
